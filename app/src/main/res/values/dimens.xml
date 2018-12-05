@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_all_xsmall_8">8dp</dimen>
+    <dimen name="margin_all_normal_24">24dp</dimen>
+
+    <dimen name="text_calculator_title_40">40sp</dimen>
+    <dimen name="text_calculator_visor_50">50sp</dimen>
+</resources>
