@@ -8,19 +8,46 @@
         <item name="android:colorForeground">@android:color/white</item>
     </style>
 
+    <style name="Text.Calculator.Visor" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:background">@color/material_red_400</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center|end</item>
+        <item name="android:padding">@dimen/margin_all_xsmall_8</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_calculator_visor</item>
+    </style>
+
+    <style name="Text.Calculator.Formula" parent="Text.Calculator.Visor">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">@dimen/text_calculator_formula</item>
+    </style>
+
+    <style name="Scroll.Calculator.Display" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/material_red_400</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">@dimen/elevation_calculator_display</item>
+    </style>
+
     <style name="Button.Calculator.Number" parent="Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored">
         <item name="android:textSize">@dimen/text_calculator_number_button</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:background">@color/material_blue_gray_200</item>
         <item name="android:layout_width">@dimen/match_constraint</item>
         <item name="android:layout_height">@dimen/match_constraint</item>
-
     </style>
 
     <style name="Button.Calculator.Operation" parent="Button.Calculator.Number">
         <item name="android:textSize">@dimen/text_calculator_operator_button</item>
         <item name="android:textColor">@android:color/holo_blue_dark</item>
         <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Button.Calculator.Operation.Right" parent="Button.Calculator.Operation">
+        <item name="android:layout_marginStart">@dimen/margin_all_xsmall_1</item>
     </style>
 
 </resources>

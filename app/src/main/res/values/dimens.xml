@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_all_xsmall_8">8dp</dimen>
+    <dimen name="margin_all_xsmall_1">1dp</dimen>
 
-    <dimen name="text_calculator_visor">80sp</dimen>
+    <dimen name="text_calculator_visor">60sp</dimen>
+    <dimen name="text_calculator_formula">30sp</dimen>
     <dimen name="text_calculator_number_button">25sp</dimen>
     <dimen name="text_calculator_operator_button">30sp</dimen>
 
-    <dimen name="calculator_visor_height">150dp</dimen>
+    <dimen name="elevation_calculator_display">4dp</dimen>
 
     <dimen name="match_constraint">0dp</dimen>
+
 </resources>

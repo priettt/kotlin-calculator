@@ -14,12 +14,11 @@
     <string name="number_8">8</string>
     <string name="number_9">9</string>
     <string name="equal_sign">=</string>
-    <string name="point_sign">,</string>
+    <string name="point_sign">.</string>
     <string name="plus_sign">+</string>
     <string name="minus_sign">-</string>
-    <string name="product_sign">.</string>
+    <string name="product_sign">×</string>
     <string name="divide_sign">/</string>
     <string name="backspace_sign">⌫</string>
-
 
 </resources>

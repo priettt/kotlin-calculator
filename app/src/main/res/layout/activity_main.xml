@@ -6,21 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text_calculator_visor"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/calculator_visor_height"
-        android:background="@color/material_red_400"
-        android:elevation="4dp"
-        android:gravity="center|end"
-        android:paddingStart="@dimen/margin_all_xsmall_8"
-        android:paddingEnd="@dimen/margin_all_xsmall_8"
-        android:text="@string/calculator_visor_default"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/text_calculator_visor"
+    <HorizontalScrollView
+        android:id="@+id/scroll_formula"
+        style="@style/Scroll.Calculator.Display"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_calculator_formula"
+            style="@style/Text.Calculator.Formula" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/scroll_visor"
+        style="@style/Scroll.Calculator.Display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scroll_formula">
+
+        <TextView
+            android:id="@+id/text_calculator_visor"
+            style="@style/Text.Calculator.Visor"
+            android:text="@string/calculator_visor_default" />
+    </HorizontalScrollView>
 
     <Button
         android:id="@+id/button_7"
@@ -29,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@id/button_4"
         app:layout_constraintEnd_toStartOf="@id/button_8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_calculator_visor" />
+        app:layout_constraintTop_toBottomOf="@+id/scroll_visor" />
 
     <Button
         android:id="@+id/button_8"
@@ -38,7 +47,7 @@
         app:layout_constraintBottom_toTopOf="@id/button_5"
         app:layout_constraintEnd_toStartOf="@id/button_9"
         app:layout_constraintStart_toEndOf="@id/button_7"
-        app:layout_constraintTop_toBottomOf="@+id/text_calculator_visor" />
+        app:layout_constraintTop_toBottomOf="@+id/scroll_visor" />
 
     <Button
         android:id="@+id/button_9"
@@ -47,7 +56,8 @@
         app:layout_constraintBottom_toTopOf="@id/button_6"
         app:layout_constraintEnd_toStartOf="@id/button_plus"
         app:layout_constraintStart_toEndOf="@id/button_8"
-        app:layout_constraintTop_toBottomOf="@+id/text_calculator_visor" />
+        app:layout_constraintTop_toBottomOf="@+id/scroll_visor" />
+
 
     <Button
         android:id="@+id/button_4"
@@ -132,19 +142,17 @@
 
     <Button
         android:id="@+id/button_backspace"
-        style="@style/Button.Calculator.Operation"
-        android:textSize="@dimen/text_calculator_number_button"
-        android:layout_marginStart="1dp"
+        style="@style/Button.Calculator.Operation.Right"
         android:text="@string/backspace_sign"
+        android:textSize="@dimen/text_calculator_number_button"
         app:layout_constraintBottom_toTopOf="@id/button_plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button_9"
-        app:layout_constraintTop_toBottomOf="@+id/text_calculator_visor" />
+        app:layout_constraintTop_toBottomOf="@+id/scroll_visor" />
 
     <Button
         android:id="@+id/button_plus"
-        style="@style/Button.Calculator.Operation"
-        android:layout_marginStart="1dp"
+        style="@style/Button.Calculator.Operation.Right"
         android:text="@string/plus_sign"
         app:layout_constraintBottom_toTopOf="@id/button_minus"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,8 +161,7 @@
 
     <Button
         android:id="@+id/button_minus"
-        style="@style/Button.Calculator.Operation"
-        android:layout_marginStart="1dp"
+        style="@style/Button.Calculator.Operation.Right"
         android:text="@string/minus_sign"
         app:layout_constraintBottom_toTopOf="@id/button_product"
         app:layout_constraintEnd_toEndOf="parent"
@@ -163,8 +170,7 @@
 
     <Button
         android:id="@+id/button_product"
-        style="@style/Button.Calculator.Operation"
-        android:layout_marginStart="1dp"
+        style="@style/Button.Calculator.Operation.Right"
         android:text="@string/product_sign"
         app:layout_constraintBottom_toTopOf="@id/button_divide"
         app:layout_constraintEnd_toEndOf="parent"
@@ -173,8 +179,7 @@
 
     <Button
         android:id="@+id/button_divide"
-        style="@style/Button.Calculator.Operation"
-        android:layout_marginStart="1dp"
+        style="@style/Button.Calculator.Operation.Right"
         android:text="@string/divide_sign"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
