@@ -9,4 +9,8 @@ class CalculatorView(activity: Activity) : ActivityView(activity) {
         activity!!.text_calculator_visor.text = visor
     }
 
+    fun setFormula(formula: String) {
+        activity!!.text_calculator_formula.text = formula
+    }
+
 }
