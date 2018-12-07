@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#37474f</color>
+    <color name="colorPrimaryDark">#004d40</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorForeground">#F2CAD9</color>
 
     <!--Colors-->
-    <color name="san_juan">#32506D</color>
+    <color name="material_blue_gray_200">#b0bec5</color>
+    <color name="material_red_400">#EF5350</color>
 
 
-    <!--Color Assignments-->
-    <color name="color_title_text">@color/san_juan</color>
 </resources>
