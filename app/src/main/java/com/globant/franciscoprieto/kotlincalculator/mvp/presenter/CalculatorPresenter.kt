@@ -8,6 +8,7 @@ import java.text.DecimalFormat
 
 const val EMPTY_STRING = ""
 const val DECIMAL_FORMAT = "#.###"
+const val POINT_SIGN = "."
 
 class CalculatorPresenter(private val model: CalculatorModel, private val view: CalculatorView) {
 
@@ -37,15 +38,29 @@ class CalculatorPresenter(private val model: CalculatorModel, private val view: 
                 model.operand_1 = model.result
                 model.clean()
             }
-            view.setFormula(model.operand_1 + operator)
+            view.setFormula("${model.operand_1} $operator")
             view.setVisor(EMPTY_STRING)
             model.operator = operator
         }
     }
 
-
     fun backspacePressed() {
-
+        when (EMPTY_STRING) {
+            model.operator -> {
+                model.operand_1 = model.operand_1.dropLast(1)
+                view.setVisor(model.operand_1)
+            }
+            model.result -> {
+                model.operand_2 = model.operand_2.dropLast(1)
+                view.setVisor(model.operand_2)
+            }
+            else -> {
+                model.clean()
+                model.operand_1 = EMPTY_STRING
+                view.setVisor(EMPTY_STRING)
+                view.setFormula(EMPTY_STRING)
+            }
+        }
     }
 
     private fun calculateResult() {
@@ -76,11 +91,10 @@ class CalculatorPresenter(private val model: CalculatorModel, private val view: 
         if (auxResult != null) {
             val decimalFormat = DecimalFormat(DECIMAL_FORMAT)
             model.result = decimalFormat.format(auxResult)
-            view.setFormula(model.operand_1 + model.operator + model.operand_2)
+            view.setFormula("${model.operand_1} ${model.operator} ${model.operand_2}")
             view.setVisor(model.result)
         }
     }
-
 
     fun resultPressed() {
         if (model.operand_1 != EMPTY_STRING && model.operand_2 != EMPTY_STRING) {
@@ -89,7 +103,20 @@ class CalculatorPresenter(private val model: CalculatorModel, private val view: 
     }
 
     fun pointPressed() {
-
+        when (EMPTY_STRING) {
+            model.operator -> {
+                if (!model.operand_1.contains(POINT_SIGN)) {
+                    model.operand_1 += POINT_SIGN
+                    view.setVisor(model.operand_1)
+                }
+            }
+            model.result -> {
+                if (!model.operand_2.contains(POINT_SIGN)) {
+                    model.operand_2 += POINT_SIGN
+                    view.setVisor(model.operand_2)
+                }
+            }
+        }
     }
 
 }
